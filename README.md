@@ -11,8 +11,8 @@ and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/developing-packages).
 -->
 
-# FlutterClock
-FlutterClock is a simple package that provides a stream of the current time. You can use this stream to display the current time and date in your Flutter applications. This package is especially useful when you need to update the time displayed in your app in real-time.
+# SimpleClock
+SimleClock is a simple package that provides a stream of the current time. You can use this stream to display the current time and date in your Flutter applications. This package is especially useful when you need to update the time displayed in your app in real-time.
 
 ## Features
 
@@ -26,12 +26,12 @@ To start using FlutterClock in your project, follow these steps:
 1. Add the package to your `pubspec.yaml` file:
     ```yaml
     dependencies:
-        flutter_clock: <latest_version>
+        simple_clock: <latest_version>
     ```
 2. Run flutter pub get to install the package.
 3. Import the package in your Dart code:
     ```dart
-    import 'package:flutter_clock/flutter_clock.dart';
+    import 'package:simple_clock/simple_clock.dart';
     ```
 
 ## Usage
@@ -40,7 +40,7 @@ Here is a standalone example of using FlutterClock:
 
 ```dart
 import 'package:flutter/material.dart';
-import 'package:flutter_clock/flutter_clock.dart';
+import 'package:simple_clock/simple_clock.dart';
 import 'package:intl/intl.dart';
 
 void main() {
@@ -74,16 +74,16 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  late FlutterClock _flutterClock;
+  late SimpleClock _simpleClock;
   late DateTime _currentTime;
 
   // initialize the clock & stream
   @override
   void initState() {
     super.initState();
-    _flutterClock = FlutterClock();
-    _currentTime = _flutterClock.getCurrentTime();
-    _flutterClock.timeStream.listen((event) {
+    _simpleClock = SimpleClock();
+    _currentTime = _simpleClock.getCurrentTime();
+    _simpleClock.timeStream.listen((event) {
       setState(() {
         _currentTime = event;
       });
@@ -93,7 +93,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   void dispose() {
-    _flutterClock.dispose();
+    _simpleClock.dispose();
     super.dispose();
   }
 
@@ -130,14 +130,14 @@ class _MyHomePageState extends State<MyHomePage> {
 For a more advanced usage with Riverpod, refer to the `/example_with_riverpod` directory in the repository.
 1. Define the providers:
     ```dart
-    import 'package:flutter_clock/flutter_clock.dart';
+    import 'package:simple_clock/simple_clock.dart';
     import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 
-    /// Dependency Injection for [FlutterClock], to avoid singleton pattern
-    final flutterClockProvider = Provider((ref) => FlutterClock());
+    /// Dependency Injection for [SimpleClock], to avoid singleton pattern
+    final simpleClockProvider = Provider((ref) => SimpleClock());
 
-    /// StremProvider for the [FlutterClock.timeStream]
+    /// StremProvider for the [SimpleClock.timeStream]
     final clockProvider = StreamProvider<DateTime>((ref) {
         final clock = ref.watch(flutterClockProvider);
         ref.onDispose(clock.dispose);

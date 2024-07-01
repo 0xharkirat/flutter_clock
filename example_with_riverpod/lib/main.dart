@@ -13,12 +13,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'FlutterClock Example With Riverpod',
+      title: 'Simple Clock Example With Riverpod',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const HomeScreen(title: 'FlutterClock Example With Riverpod'),
+      home: const HomeScreen(title: 'Simple Clock Example With Riverpod'),
+      debugShowCheckedModeBanner: false,
     );
   }
 }

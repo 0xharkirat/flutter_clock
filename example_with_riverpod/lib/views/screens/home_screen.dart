@@ -26,7 +26,7 @@ class HomeScreen extends ConsumerWidget {
             return TimeDisplay(context: context, formattedTime: formattedTime, formattedDate: formattedDate);
           },
           loading: () {
-            final currentTime = ref.watch(flutterClockProvider).getCurrentTime();
+            final currentTime = ref.watch(simpleClockProvider).getCurrentTime();
             final formattedTime = DateFormat.Hms().format(currentTime);
             final formattedDate = DateFormat.yMMMMEEEEd().format(currentTime);
             return TimeDisplay(context: context, formattedTime: formattedTime, formattedDate: formattedDate);
