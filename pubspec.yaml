@@ -1,6 +1,6 @@
 name: simple_clock
 description: "SimpleClock is a simple package that provides a stream of the current time."
-version: 0.0.1
+version: 0.0.2
 homepage: https://github.com/0xharkirat/simple_clock
 
 environment:
