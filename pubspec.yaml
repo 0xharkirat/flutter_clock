@@ -1,7 +1,7 @@
-name: flutter_clock
-description: "A new Flutter package project."
+name: simple_clock
+description: "FlutterClock is a simple package that provides a stream of the current time."
 version: 0.0.1
-homepage:
+homepage: https://github.com/0xharkirat/flutter_clock
 
 environment:
   sdk: '>=3.4.0 <4.0.0'

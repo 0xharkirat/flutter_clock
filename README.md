@@ -204,3 +204,8 @@ For a more advanced usage with Riverpod, refer to the `/example_with_riverpod` d
 + Bugs: If you encounter any bugs, please report them in the issue tracker.
 
 Thank you for using FlutterClock!
+
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

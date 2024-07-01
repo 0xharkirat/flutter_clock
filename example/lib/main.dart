@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_clock/flutter_clock.dart';
 import 'package:intl/intl.dart';
+import 'package:simple_clock/simple_clock.dart';
 
 void main() {
   runApp(const MyApp());
@@ -33,16 +33,16 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  late FlutterClock _flutterClock;
+  late SimpleClock _simpleClock;
   late DateTime _currentTime;
 
   // initialize the clock & stream
   @override
   void initState() {
     super.initState();
-    _flutterClock = FlutterClock();
-    _currentTime = _flutterClock.getCurrentTime();
-    _flutterClock.timeStream.listen((event) {
+    _simpleClock = SimpleClock();
+    _currentTime = _simpleClock.getCurrentTime();
+    _simpleClock.timeStream.listen((event) {
       setState(() {
         _currentTime = event;
       });
@@ -52,7 +52,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   void dispose() {
-    _flutterClock.dispose();
+    _simpleClock.dispose();
     super.dispose();
   }
 

@@ -62,13 +62,6 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  flutter_clock:
-    dependency: "direct main"
-    description:
-      path: ".."
-      relative: true
-    source: path
-    version: "0.0.1"
   flutter_lints:
     dependency: "direct dev"
     description:
@@ -170,6 +163,13 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.5.1"
+  simple_clock:
+    dependency: "direct main"
+    description:
+      path: ".."
+      relative: true
+    source: path
+    version: "0.0.1"
   sky_engine:
     dependency: transitive
     description: flutter

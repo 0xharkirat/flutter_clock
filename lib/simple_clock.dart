@@ -1,13 +1,13 @@
-library flutter_clock;
+library simple_clock;
 
 import 'dart:async';
 
-class FlutterClock {
+class SimpleClock {
   DateTime _currentTime;
   final StreamController<DateTime> _timeController = StreamController<DateTime>.broadcast();
   late Timer _timer;
 
-  FlutterClock() : _currentTime = DateTime.now() {
+  SimpleClock() : _currentTime = DateTime.now() {
     _startClock();
   }
 
