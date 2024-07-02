@@ -35,6 +35,43 @@ To start using FlutterClock in your project, follow these steps:
     ```
 
 ## Usage
++ `getCurrentTime()`: returns the current time in `DateTime`
++ `timeStream`: is getter which returns the `Stream<DateTime>`
++ `dispose()`: you also need to use this method to close the stream.
+
+### Step by Step usage:
+1. Create instance of `SimpleClock` class & `DateTime` variable:
+    ```dart
+    late SimpleClock _simpleclock;
+    late DateTime _currentTime;
+    ```
+
+2. Init the stream in `initState()` method of `StatefulWidget`:
+    ```dart
+      // initialize the clock & stream
+    @override
+    void initState() {
+      super.initState();
+      _simpleClock = SimpleClock();
+      _currentTime = _simpleClock.getCurrentTime();
+      _simpleClock.timeStream.listen((event) {
+        setState(() {
+          _currentTime = event;
+        });
+      });
+    }
+    ```
+
+3. Don't forget to dispose the stream in `dispose()` method:
+    ```dart
+    @override
+    void dispose() {
+      _simpleClock.dispose();
+      super.dispose();
+    }
+    ```
+
+
 ### Standalone Example
 Here is a standalone example of using FlutterClock:
 
